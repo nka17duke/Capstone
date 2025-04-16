@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>East End Park Research</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+           
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('AboutUs') }}">About Us</a></li>
+            
+            <!-- Research tab with dropdown -->
+            <li class="dropdown">
+                <a>Learn More</a>
+                <!-- Dropdown Menu (hidden by default) -->
+                <ul class="dropdown-menu">
+                    <li><a href="{{ url_for('researchoverview') }}">Research Overview</a></li>
+                    <li><a href="{{ url_for('eastdurhampark') }}">East Durham Park</a></li>
+                    <li><a href="{{ url_for('eastendpark') }}">East End Park</a></li>
+                    <li><a href="{{ url_for('lyonpark') }}">Lyon Park</a></li>
+                    <li><a href="{{ url_for('northgatepark') }}">Northgate Park</a></li>
+                    <li><a href="{{ url_for('walltownpark') }}">Walltown Park</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            
+            <form action="{{ url_for('search') }}" method="POST" class="search-container">
+              <input type="text" name="query" class="search-input" placeholder="Search..." value="{{ query }}">
+              <button type="submit" class="search-button">🔍</button>
+          </form>
+        </ul>
+
+    </nav>
+   
+   <!--- <img src="static/images/eastend_second.png" alt="East End Park pt"> -->
+
+    <div class="header-image">
+        <img src="{{ url_for('static', filename='images/eastndprk.png') }}" style="width: 1600px; height: 500px;">
+        </div>
+    
+        <div class="container">
+            <!-- Text Box (Left Side) -->
+            <div class="text-box">
+                <h2>East End Park</h2>
+                <p>Inside <a href="https://www.dprplaymore.org/facilities/facility/details/East-End-Park-20" class="custom-link">East End park</a> there were three spots that exceeded the safe limit, two of them being found in a restricted area. The third (772 mg/kg) was found near an old building, but that may have been caused by peeling paint. Deeper samples revealed nothing out of the ordinary and the playground was deemed safe. There were slightly high Arsenic and cobalt levels but not outside of natural limits. </p>
+            </div>
+    
+            <!-- Image Box (Right Side) -->
+            <div class="image-box">
+               
+
+                <img src="{{ url_for('static', filename='images/eastend.png') }}" style="width: 900px; height: 500px;">
+            </div>
+        </div>
+
+
+
+
+
+   <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "50634618-3e01-4fbb-8489-06d01eb92bca", // The ID of this integration.
+          region: "us-east", // The region your integration is hosted in.
+          serviceInstanceID: "7cded064-0aa9-4397-b58c-340180a1e0bf", // The ID of your service instance.
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+</body>
+</html>

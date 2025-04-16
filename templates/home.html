@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+img {
+  width: 100%;
+}
+</style>
+    <title>DLCC</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('AboutUs') }}">About Us</a></li>
+            
+            <!-- Research tab with dropdown -->
+            <li class="dropdown">
+                <a>Learn More</a>
+                <!-- Dropdown Menu (hidden by default) -->
+                <ul class="dropdown-menu">
+                 <li><a href="{{ url_for('researchoverview') }}">Research Overview</a></li>
+                    <li><a href="{{ url_for('eastdurhampark') }}">East Durham Park</a></li>
+                    <li><a href="{{ url_for('eastendpark') }}">East End Park</a></li>
+                    <li><a href="{{ url_for('lyonpark') }}">Lyon Park</a></li>
+                    <li><a href="{{ url_for('northgatepark') }}">Northgate Park</a></li>
+                    <li><a href="{{ url_for('walltownpark') }}">Walltown Park</a></li>
+                </ul>
+            </li>
+            
+            <li><a href="{{ url_for('blog') }}">Blog</a></li>
+            
+            <form action="{{ url_for('search') }}" method="POST" class="search-container">
+              <input type="text" name="query" class="search-input" placeholder="Search..." value="{{ query }}">
+              <button type="submit" class="search-button">🔍</button>
+          </form>
+        </ul>
+
+    </nav>
+    
+   
+    <img src="{{ url_for('static', filename='images/soilsign.png') }}">
+    <h1>Welcome to the Durham Lead Contamination Prevention Committee</h1>
+    <div class="container">
+      <!-- Text Box (Left Side) -->
+      <div class="only-text">
+         
+          <p>The <a href="https://www.dprplaymore.org/516/Soil-Property-Testing" class="custom-link">City of Durham</a> is addressing lead contamination in several local parks, where elevated levels were detected due to historical waste disposal. The city is working with environmental agencies to test and remediate affected areas, prioritizing public health and safety. Residents, especially families with young children, are encouraged to stay informed and take advantage of free lead testing resources. Stay updated on progress and safety recommendations by visiting the city’s official environmental health page.</p>
+      </div>
+
+  </div>
+
+
+
+
+
+
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "50634618-3e01-4fbb-8489-06d01eb92bca", // The ID of this integration.
+          region: "us-east", // The region your integration is hosted in.
+          serviceInstanceID: "7cded064-0aa9-4397-b58c-340180a1e0bf", // The ID of your service instance.
+          onLoad: async (instance) => { await instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+</body>
+</html>
