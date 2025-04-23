@@ -36,23 +36,16 @@
     </nav>
     <h2>Create a Blog Post</h2>
     <form method="POST">
-        <input type="text" name="title" placeholder="Title" required>
+      <div class="container">
+        <div class="text-box">
+
+        <h2.blog><input type="text" name="title" placeholder="Title" required></h2.blog>
         <textarea name="content" placeholder="Write your post here..." required></textarea>
         <button type="submit">Post</button>
+        </div>
+      </div>
     </form>
     <a href="/blog">View All Blog Posts</a>
-   <script>
-        window.watsonAssistantChatOptions = {
-          integrationID: "50634618-3e01-4fbb-8489-06d01eb92bca", // The ID of this integration.
-          region: "us-east", // The region your integration is hosted in.
-          serviceInstanceID: "7cded064-0aa9-4397-b58c-340180a1e0bf", // The ID of your service instance.
-          onLoad: async (instance) => { await instance.render(); }
-        };
-        setTimeout(function(){
-          const t=document.createElement('script');
-          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
-          document.head.appendChild(t);
-        });
-      </script>
+
 </body>
 </html>

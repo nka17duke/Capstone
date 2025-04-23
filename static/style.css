@@ -82,6 +82,16 @@ div {
     text-align: left;
 }
 
+.blogdiv {
+    background: white;
+    /*padding: 20px;*/
+    /*margin: 20px auto;*/
+    
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
 h1 {
     color: #090909;
     font-size: 36px;
@@ -299,6 +309,16 @@ a.custom-link:hover {
 }
 
 .only-text {
+    flex: 1;
+    max-width: 100%;
+    padding: 20px;
+    background: #e6e6e6;
+    border-radius: 10px;
+    text-align: left;
+    
+}
+
+.blog-title {
     flex: 1;
     max-width: 100%;
     padding: 20px;

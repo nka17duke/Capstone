@@ -88,9 +88,9 @@ def AboutUs():
 def research():
     return render_template('research.html')
 
-@app.route('/research-overview')
+@app.route('/researchoverview')
 def researchoverview():
-    return render_template('research-overview.html')
+    return render_template('researchoverview.html')
 
 @app.route('/eastdurhampark')
 def eastdurhampark():
@@ -175,9 +175,11 @@ def dashboard():
 # Page for blog posts
 @app.route('/blog')
 def blog():
-    posts = post.query.order_by(post.date_posted.desc()).all() 
+    page = request.args.get('page', 1, type=int)
+    per_page = 5
+    posts = post.query.order_by(post.date_posted.desc()).paginate(page=page, per_page=per_page)
     return render_template('blog.html', posts=posts)
-
+    
 # Creating new posts only while logged in
 @app.route('/create_post', methods=['GET', 'POST'])
 @login_required
